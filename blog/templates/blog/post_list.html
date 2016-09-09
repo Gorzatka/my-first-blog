@@ -1,18 +1,17 @@
 <html>
     <head>
-        <title>Gosia's Blog</title>
+        <title>Django Girls blog</title>
     </head>
     <body>
-        <p><em>Hi there!</em></p>
-        <p>It works!</p>
-        <p> This is my first Django Project.</p>
-        <p>I have started to learn coding on January 2016. On 9th Jan I joined <a href = "www.codecademy.com">Codecademy</a>.</p>
-        <p>So far I covered the following courses:</p>
-        <ul>
-            <li>Python</li>
-            <li>HTML & CSS</li>
-            <li>Command Line</li>
-            <li>GIT</li>
-        </ul>
+        <div>
+            <h1><a href="">Django Girls Blog</a></h1>
+        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
